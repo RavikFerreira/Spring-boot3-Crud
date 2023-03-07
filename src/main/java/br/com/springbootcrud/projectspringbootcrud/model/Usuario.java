@@ -4,16 +4,22 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 @Entity
 @SequenceGenerator(name = "seq_usuario",sequenceName = "seq_usuario", allocationSize = 1,initialValue = 1)
-@Table(name = "Usuarios")
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario")
     private Long id;
-    @Column(name = "Nome")
     private String nome;
-    @Column(name = "Idade")
     private int idade;
+
+    public Usuario(Long id, String nome, int idade) {
+        this.id = id;
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    public Usuario() {
+    }
 
     public Long getId() {
         return id;
