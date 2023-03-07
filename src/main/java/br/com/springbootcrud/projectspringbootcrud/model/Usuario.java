@@ -1,13 +1,14 @@
 package br.com.springbootcrud.projectspringbootcrud.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 @Entity
-@Table(name = "tb_usuarios")
+@SequenceGenerator(name = "seq_usuario",sequenceName = "seq_usuario", allocationSize = 1,initialValue = 1)
+@Table(name = "Usuarios")
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario")
     private Long id;
     @Column(name = "Nome")
     private String nome;
