@@ -1,9 +1,23 @@
 .modal-content{
-    margin: -30px 30px 30px 30px;
+    top: 10%;
+    margin: 0 auto;
+    max-width: 650px;
+    max-height: 70vh;
+    overflow-y: auto;
 
 }
 
 .modal-body{
-    margin: 30px 30px 30px 30px;
+    width: 650px;
+    height: 120px;
+}
+.modal-header{
+    width: 650px;
+    height: 40px;
+}
 
+.modal-footer{
+    text-align: center;
+    width: 650px;
+    height: 60px;
 }
