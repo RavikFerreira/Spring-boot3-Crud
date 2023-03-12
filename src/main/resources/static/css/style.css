@@ -1,23 +1,31 @@
+html{
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 4%;
+}
 .modal-content{
     top: 10%;
     margin: 0 auto;
-    max-width: 650px;
+    max-width: 550px;
+    height: 450px;
     max-height: 70vh;
-    overflow-y: auto;
 
 }
-
 .modal-body{
-    width: 650px;
-    height: 120px;
+    width: 550px;
+    max-height: 140px;
+}
+.modal-table{
+    height: 200px;
+    overflow: auto;
 }
 .modal-header{
-    width: 650px;
+    width: 550px;
     height: 40px;
 }
 
 .modal-footer{
     text-align: center;
-    width: 650px;
+    width: 550px;
     height: 60px;
 }

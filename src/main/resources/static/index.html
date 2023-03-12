@@ -42,20 +42,23 @@
                 <input type="text" class="form-control" id="nomeBuscar">
             </div>
             <button type="button" class="btn btn-success" onclick="pesquisaUser()">Buscar</button>
-            </form>
-        <table class="table" id="tabelaResultados">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Deletar</th>
-            </tr>
-            </thead>
+        </form>
+    </div>
+        <div class="modal-table">
+            <table class="table" id="tabelaResultados">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Deletar</th>
+                    </tr>
+                </thead>
             <tbody>
             </tbody>
-        </table>
-    </div>
+            </table>
+        </div>
+
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" onclick="closeModal()" data-bs-dismiss="modal">Fechar</button>
         </div>
@@ -112,8 +115,10 @@
     function deletarUserPg(){
 
         var id = $('#id').val();
+        if(id != null && id.trim() !='' ){
         deleteUser(id);
         document.getElementById('formCadastroUser').reset();
+        }
     }
     function deleteUser(id){
 
@@ -160,6 +165,18 @@
         var id = $("#id").val();
         var nome = $("#nome").val();
         var idade= $("#idade").val();
+
+        if(nome == null || nome != null && nome.trim() == ''){
+            $("#nome").focus();
+            alert("Informe o nome: ")
+            return;
+
+        }
+        if(idade == null ||idade != null && idade.trim() == ''){
+            $("#idade").focus();
+            alert("Informe a idade: ")
+            return;
+        }
 
         $.ajax({
             method: "POST",
