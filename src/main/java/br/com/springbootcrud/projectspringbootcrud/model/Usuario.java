@@ -21,6 +21,9 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
+    public Usuario(String string, int i) {
+    }
+
     public Long getId() {
         return id;
     }
